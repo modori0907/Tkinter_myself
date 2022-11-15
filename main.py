@@ -108,13 +108,13 @@ list_add_button = tkinter.Button(file_frame, text="フォルダ参照", borderwi
 list_add_label = tkinter.Label(file_frame, text="PATH", font=basic_font)
 list_add_box = tkinter.Entry(file_frame, width=40, font=basic_font)
 
-chose_mem_acm = tkinter.Radiobutton(choose_mem, text=f"ACM: {products_mem[0]}", font=basic_font,
+chose_mem_acm = tkinter.Radiobutton(choose_mem, text=f"ACM: {products_mem[0]} kb", font=basic_font,
                                     variable=source_memory, value=products_mem[0])
 
 chose_mem_acm.grid(row=0, column=0, padx=10, pady=10)
 
 # レジオボタン、対象ラジオをボタンを選んだら、valueで指定した値をvariableで指定した変数に入力する
-chose_mem_aes = tkinter.Radiobutton(choose_mem, text=f"AES: {products_mem[1]}", font=basic_font,
+chose_mem_aes = tkinter.Radiobutton(choose_mem, text=f"AES: {products_mem[1]} kb", font=basic_font,
                                     variable=source_memory, value=products_mem[1])
 chose_mem_aes.grid(row=0, column=1, padx=10, pady=10)
 
