@@ -3,11 +3,27 @@ import configparser
 import tkinter
 from tkinter import messagebox
 
+
+test_get = "test"
+cp = configparser.ConfigParser()
+try:
+    cp.read("test.ini")
+    print("read")
+    test_get = cp["Client"]["test_get"]
+except:
+    pass
+
+
+
+
 # ウィンドウの作成
 root = tkinter.Tk()
 root.title = ("Menu practice")
 root.geometry("240x200")
 root.resizable(0, 0)
+
+# --- 関数
+
 
 
 # ------- 設定ファイルを変数に入れることができるかチェック -------#
@@ -35,8 +51,7 @@ def menuHelpVersion():
 def menuFileExit():
     cp = configparser.ConfigParser()
     cp["Client"] = {
-        "Width": str(root.winfo_width()),
-        "Height": str(root.winfo_height())
+        "test_get": "test",
     }
     with open("test.ini", "w") as f:
         cp.write(f)
@@ -72,7 +87,7 @@ file_menu.add_command(label="新規ファイル")
 help_menu.add_command(label="バージョン情報(V)", command=menuHelpVersion)
 
 # 条件に合致したら画面上に文字を表示させる
-test_get = "test"
+
 list_cpu_number = tkinter.Label(text=f"{test_get}")
 list_cpu_number.grid(row=1, column=1, pady=15, ipadx=5)
 
