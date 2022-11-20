@@ -11,7 +11,7 @@ try:
     print("read")
     test_get = cp["Client"]["test_get"]
 except:
-    pass
+
 
 
 
