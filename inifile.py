@@ -1,18 +1,37 @@
 # 設定ファイル作成用
 import configparser
 import tkinter
+from configparser import ConfigParser
 from tkinter import messagebox
 
 
-test_get = "test"
-cp = configparser.ConfigParser()
+
+
+
+# iniファイルの値をリストで取得するために利用
+import json
+
+#
+test_get = []
+
+"""
+iniファイルを反映させる処理"""
+
+
 try:
-    cp.read("test.ini")
-    print("read")
-    test_get = cp["Client"]["test_get"]
+    cp = configparser.ConfigParser()
+    cp.read("sample.ini")
+    test_get = json.loads(cp.get("settings_list", 'SETTINGS_03'))
+
+    print(type(test_get))
+    print(test_get)
 except:
+    print("aa")
+    pass
 
 
+# リストでゲットする方法
+# 失敗した時は対象の設定がわかるようにする
 
 
 
